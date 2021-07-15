@@ -55,6 +55,7 @@ Option D can be printed if the number 'n' is -10. This is easy to see.
 
 Since C is the correct answer E cannot be the correct answer
  */
+/*
 //Q10
 #include<iostream>
 using namespace std;
@@ -75,4 +76,21 @@ int main(){
    for(i=0;i<n;i++)
       cout<<A[i]<<" ";
    return 0;
+}*/
+//Q11
+#include<iostream>
+using namespace std;
+void t(int n, char fp, char tp, char ap){
+    if(n==1){
+        cout << fp << tp;
+        return;
+    }
+    t(n-1,fp,ap, tp);
+    cout << fp << tp;
+    t(n-1,ap,tp,fp);
+    return;
+}
+int main(){
+    t(2,'x','y','z');
+    return 0;
 }
